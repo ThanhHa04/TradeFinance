@@ -1,5 +1,6 @@
 # Soroban Project
-## Stellar
+## Tran Thanh Ha 
+## Nghiem Dieu Linh
 
 ## Project Structure
 
