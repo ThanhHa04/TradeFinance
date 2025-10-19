@@ -1,0 +1,23 @@
+---
+// src/pages/issuer/monitor.astro
+import Layout from '../../layouts/Layout.astro';
+import LcList from '../../components/WalletConnect.astro'; 
+---
+
+<Layout title="Giám sát & Xác minh L/C (Bank)">
+    <main class="container">
+        <h1>Giám sát Thư tín dụng (L/C)</h1>
+        <p class="warning">
+            Chức năng này chỉ dành cho Issuer (Ngân hàng) đã được khởi tạo trong Contract.
+            Nếu bạn là Issuer, bạn có quyền gọi hàm <code>verify_documents</code>.
+        </p>
+        
+        <LcList role="issuer" client:load /> 
+
+    </main>
+</Layout>
+
+<style>
+    .container { padding: 40px; }
+    .warning { color: #cc0000; border: 1px solid #cc0000; padding: 10px; border-radius: 5px; }
+</style>

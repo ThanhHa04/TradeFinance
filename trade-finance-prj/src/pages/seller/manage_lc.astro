@@ -1,0 +1,25 @@
+---
+// src/pages/seller/manage_lc.astro
+import Layout from '../../layouts/Layout.astro';
+import LcList from '../../components/WalletConnect.astro'; 
+---
+
+<Layout title="Yêu cầu Giải ngân (Seller)">
+    <main class="container">
+        <h1>L/C Bạn Được Thụ Hưởng</h1>
+        <p>
+            L/C sẽ được giải ngân tự động khi trạng thái là **Đã Ký Quỹ** và **Đã Xác minh Tài liệu**.
+        </p>
+        
+        <LcList role="seller" client:load /> 
+
+        <p class="note">
+            Nút "Giải ngân" chỉ xuất hiện khi L/C đủ điều kiện.
+        </p>
+    </main>
+</Layout>
+
+<style>
+    .container { padding: 40px; }
+    .note { margin-top: 20px; color: #008000; font-weight: bold; }
+</style>

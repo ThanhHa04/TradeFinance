@@ -1,0 +1,14 @@
+---
+
+Astro.response.headers.set("Content-Type", "text/html; charset=utf-8");
+let address = null;
+if (typeof window !== "undefined") {
+  address = localStorage.getItem("walletAddress");
+}
+---
+
+<section class="dashboard">
+  <h2>🏪 Seller Dashboard</h2>
+  <p>Ví đã kết nối: <strong>{address}</strong></p>
+  <button onClick={() => {localStorage.clear(); window.location.href = "/"}}>🔌 Ngắt kết nối</button>
+</section>

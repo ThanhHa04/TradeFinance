@@ -1,0 +1,21 @@
+---
+// src/pages/buyer/manage_lc.astro
+import Layout from '../../layouts/Layout.astro';
+import LcList from '../../components/WalletConnect.astro'; 
+---
+
+<Layout title="Quản lý & Ký quỹ L/C (Buyer)">
+    <main class="container">
+        <h1>L/C Đã Phát Hành</h1>
+        <p>
+            Xem trạng thái các L/C bạn đã mở. Hãy Ký quỹ (Fund) để kích hoạt L/C.
+        </p>
+        
+        <LcList role="buyer" client:load /> 
+
+        </main>
+</Layout>
+
+<style>
+    .container { padding: 40px; }
+</style>

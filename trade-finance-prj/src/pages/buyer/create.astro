@@ -1,0 +1,25 @@
+---
+// src/pages/buyer/create.astro
+import Layout from '../../layouts/Layout.astro';
+import LcForm from '../../components/WalletConnect.astro'; // Giả định component form
+---
+
+<Layout title="Tạo Hợp đồng Tín dụng (L/C)">
+    <main class="container">
+        <h1>Tạo L/C Mới</h1>
+        <p>
+            Bạn đang đăng nhập với vai trò Người Mua (Buyer). Vui lòng điền thông tin chi tiết L/C.
+        </p>
+        
+        <LcForm action="create" client:load /> 
+        
+        <p class="note">
+            Sau khi tạo, bạn cần Ký quỹ (Fund) L/C này trên trang quản lý.
+        </p>
+    </main>
+</Layout>
+
+<style>
+    .container { padding: 40px; }
+    .note { margin-top: 20px; color: #666; font-style: italic; }
+</style>

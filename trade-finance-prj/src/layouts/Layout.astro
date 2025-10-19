@@ -1,0 +1,92 @@
+---
+import WalletConnect from '../components/WalletConnect.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} | Trade Finance DApp</title>
+
+    <!-- CSS toàn cục -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
+
+    <!-- Font hỗ trợ tiếng Việt -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Font mặc định */
+        body {
+            font-family: 'Inter', 'Roboto', 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 0;
+            color: #222;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        header {
+            background-color: #1a4d8c;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h2 {
+            margin: 0;
+        }
+
+        header h2 a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        header h2 a:hover {
+            text-decoration: underline;
+        }
+
+        .wallet-status {
+            font-size: 0.9em;
+        }
+
+        main {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.08);
+            min-height: 75vh;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <slot />
+    </main>
+
+    <footer>
+        &copy; 2025 Trade Finance Soroban DApp
+    </footer>
+</body>
+</html>

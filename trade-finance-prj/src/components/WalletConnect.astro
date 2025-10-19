@@ -1,0 +1,74 @@
+---
+const roles = {
+  buyer: {
+    address: "GBUYER1234567890",
+    redirect: "/buyer/",
+  },
+  seller: {
+    address: "GSELLER1234567890",
+    redirect: "/seller/",
+  },
+  bank: {
+    address: "GBANK1234567890",
+    redirect: "/bank/",
+  },
+};
+---
+
+<div class="wallet-box">
+  <h2>Kết nối ví giả lập</h2>
+  <p>Chọn vai trò để vào dashboard tương ứng:</p>
+  <div class="btn-group">
+    <button id="buyer-btn">👤 Buyer</button>
+    <button id="seller-btn">🏪 Seller</button>
+    <button id="bank-btn">🏦 Bank</button>
+  </div>
+</div>
+
+<script>
+  const roles = {
+    buyer: {
+      address: "GBUYER1234567890",
+      redirect: "/buyer/",
+    },
+    seller: {
+      address: "GSELLER1234567890",
+      redirect: "/seller/",
+    },
+    bank: {
+      address: "GBANK1234567890",
+      redirect: "/bank/",
+    },
+  };
+
+  function connectWallet(role) {
+    localStorage.setItem("walletAddress", roles[role].address);
+    localStorage.setItem("role", role);
+    window.location.href = roles[role].redirect;
+  }
+
+  document.getElementById("buyer-btn")?.addEventListener("click", () => connectWallet("buyer"));
+  document.getElementById("seller-btn")?.addEventListener("click", () => connectWallet("seller"));
+  document.getElementById("bank-btn")?.addEventListener("click", () => connectWallet("bank"));
+</script>
+
+<style>
+.wallet-box {
+  text-align: center;
+  margin-top: 60px;
+}
+.btn-group button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #6c63ff;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-group button:hover {
+  background-color: #574bff;
+}
+</style>
